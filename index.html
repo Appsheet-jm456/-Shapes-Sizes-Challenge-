@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kinetic English Games – Shapes & Sizes Challenge</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Intro Screen -->
+    <div id="intro-screen" class="screen active">
+        <div class="intro-content">
+            <div class="logo-container">
+                <div class="logo-shapes">
+                    <div class="floating-shape shape-circle"></div>
+                    <div class="floating-shape shape-triangle"></div>
+                    <div class="floating-shape shape-star"></div>
+                    <div class="floating-shape shape-hexagon"></div>
+                </div>
+                <h1 class="game-title">
+                    <span class="title-kinetic">Kinetic</span>
+                    <span class="title-english">English</span>
+                    <span class="title-games">Games</span>
+                </h1>
+                <h2 class="game-subtitle">Shapes & Sizes Challenge</h2>
+            </div>
+            <p class="intro-credit">by Camilo Marín</p>
+            <button id="start-btn" class="btn-primary pulse-glow">
+                <span class="btn-icon">▶</span>
+                <span>Start Game</span>
+            </button>
+        </div>
+        <div class="intro-decorations">
+            <div class="deco-shape deco-1"></div>
+            <div class="deco-shape deco-2"></div>
+            <div class="deco-shape deco-3"></div>
+            <div class="deco-shape deco-4"></div>
+        </div>
+    </div>
+
+    <!-- Game Screen -->
+    <div id="game-screen" class="screen">
+        <div class="game-container">
+            <!-- Left Column - Answer Options -->
+            <div class="column column-left">
+                <div class="column-header">
+                    <span class="header-icon">🎯</span>
+                    <span>Choose Answer</span>
+                </div>
+                <div id="answer-options" class="answer-options">
+                    <!-- Dynamically populated -->
+                </div>
+            </div>
+
+            <!-- Center Column - Visual Challenge -->
+            <div class="column column-center">
+                <div class="question-header">
+                    <div class="progress-info">
+                        <span class="progress-text">Question <span id="current-question">1</span> of 20</span>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+                    <div class="timer-container">
+                        <div id="timer" class="timer">
+                            <span class="timer-icon">⏱️</span>
+                            <span id="timer-value">15</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="question-text-container">
+                    <p id="question-text" class="question-text"></p>
+                </div>
+                <div id="shape-display" class="shape-display">
+                    <!-- Shapes rendered here -->
+                </div>
+            </div>
+
+            <!-- Right Column - Feedback & Controls -->
+            <div class="column column-right">
+                <div class="stats-container">
+                    <div class="stat-item score-display">
+                        <span class="stat-icon">⭐</span>
+                        <span class="stat-label">Score</span>
+                        <span id="score-value" class="stat-value">0</span>
+                    </div>
+                    <div class="stat-item streak-display">
+                        <span class="stat-icon">🔥</span>
+                        <span class="stat-label">Streak</span>
+                        <span id="streak-value" class="stat-value">0</span>
+                    </div>
+                </div>
+                <div id="feedback-container" class="feedback-container">
+                    <div id="feedback-message" class="feedback-message"></div>
+                    <div id="micro-tip" class="micro-tip"></div>
+                </div>
+                <button id="next-btn" class="btn-next hidden">
+                    <span>Next Question</span>
+                    <span class="btn-arrow">→</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Results Screen -->
+    <div id="results-screen" class="screen">
+        <div class="results-content">
+            <div class="trophy-container">
+                <span class="trophy">🏆</span>
+            </div>
+            <h2 class="results-title">Amazing Job!</h2>
+            <div class="results-stats">
+                <div class="result-item result-score">
+                    <span class="result-icon">⭐</span>
+                    <span class="result-label">Total Score</span>
+                    <span id="final-score" class="result-value">0</span>
+                </div>
+                <div class="result-item result-correct">
+                    <span class="result-icon">✅</span>
+                    <span class="result-label">Correct</span>
+                    <span id="final-correct" class="result-value">0</span>
+                </div>
+                <div class="result-item result-incorrect">
+                    <span class="result-icon">❌</span>
+                    <span class="result-label">Incorrect</span>
+                    <span id="final-incorrect" class="result-value">0</span>
+                </div>
+                <div class="result-item result-accuracy">
+                    <span class="result-icon">📊</span>
+                    <span class="result-label">Accuracy</span>
+                    <span id="final-accuracy" class="result-value">0%</span>
+                </div>
+            </div>
+            <p id="motivation-message" class="motivation-message"></p>
+            <button id="play-again-btn" class="btn-primary pulse-glow">
+                <span class="btn-icon">🔄</span>
+                <span>Play Again</span>
+            </button>
+        </div>
+        <div id="confetti-container" class="confetti-container"></div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="shapes.js"></script>
+    <script src="game.js"></script>
+</body>
+</html>
